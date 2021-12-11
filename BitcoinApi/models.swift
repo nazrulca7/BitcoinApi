@@ -12,8 +12,27 @@ struct Bitcoin: Codable{
     let asset_id : String?
     let name : String?
     let type_is_crypto : Int?
+    
+    
+let data_quote_start: String
+let data_quote_end : String
+let data_orderbook_start: String
+let data_orderbook_end  : String
+let data_trade_start  : String
+let data_trade_end : String
+let data_symbols_count : Int?
+let volume_1hrs_usd: Float?
+let volume_1day_usd: Float?
+let volume_1mth_usd: Float?
+    
+    
+    
+    
     let price_usd : Float?
     let id_icon : String?
+    
+let data_start: String
+let data_end : String
     
     
     
