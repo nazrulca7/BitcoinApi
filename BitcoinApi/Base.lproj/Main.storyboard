@@ -24,6 +24,21 @@
             </objects>
             <point key="canvasLocation" x="732" y="67"/>
         </scene>
+        <!--Details View Controller-->
+        <scene sceneID="ozT-xb-jcj">
+            <objects>
+                <viewController id="2eF-ZR-dmg" customClass="DetailsViewController" customModule="BitcoinApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ks-aC-mCe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Sf9-oC-c4B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pu3-UJ-0iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="68"/>
+        </scene>
         <!--Bitcoin Tracker-->
         <scene sceneID="sZf-vn-alP">
             <objects>

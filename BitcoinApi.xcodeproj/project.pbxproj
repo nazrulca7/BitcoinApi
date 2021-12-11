@@ -16,6 +16,7 @@
 		106E44D927630E1600D57BA8 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E44D827630E1500D57BA8 /* ApiCall.swift */; };
 		106E44DB27631CA600D57BA8 /* BitcoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E44DA27631CA600D57BA8 /* BitcoinTableViewCell.swift */; };
 		106E44DD276326F400D57BA8 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E44DC276326F400D57BA8 /* models.swift */; };
+		106E44FF27648CED00D57BA8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E44FE27648CED00D57BA8 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		106E44D827630E1500D57BA8 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
 		106E44DA27631CA600D57BA8 /* BitcoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinTableViewCell.swift; sourceTree = "<group>"; };
 		106E44DC276326F400D57BA8 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
+		106E44FE27648CED00D57BA8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				106E44D827630E1500D57BA8 /* ApiCall.swift */,
 				106E44DA27631CA600D57BA8 /* BitcoinTableViewCell.swift */,
 				106E44DC276326F400D57BA8 /* models.swift */,
+				106E44FE27648CED00D57BA8 /* DetailsViewController.swift */,
 			);
 			path = BitcoinApi;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				106E44DD276326F400D57BA8 /* models.swift in Sources */,
 				106E44C527630DD400D57BA8 /* AppDelegate.swift in Sources */,
 				106E44D927630E1600D57BA8 /* ApiCall.swift in Sources */,
+				106E44FF27648CED00D57BA8 /* DetailsViewController.swift in Sources */,
 				106E44DB27631CA600D57BA8 /* BitcoinTableViewCell.swift in Sources */,
 				106E44C727630DD400D57BA8 /* SceneDelegate.swift in Sources */,
 			);

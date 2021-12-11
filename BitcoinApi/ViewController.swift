@@ -19,7 +19,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }()
     
     private  var viewModels =  [BitcoinTableViewCellModel]()
- 
+    static let numberFormatter : NumberFormatter =
+    {
+        let formatter = NumberFormatter()
+        formatter.locale = .current
+        formatter.allowsFloats = true
+        formatter.numberStyle = .currency
+        formatter.formatterBehavior = .default
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         title = "Bitcoin Tracker"
         view.addSubview(tableView)
@@ -32,22 +41,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
             case .success(let models):
               
-               self?.viewModels = models.compactMap({
+               self?.viewModels = models.compactMap({ models in
+                   let price = models.price_usd ?? 0
+                   let formatter = ViewController.numberFormatter
+                   let priceString = formatter.string(from: NSNumber(value: price))
                    
-                   BitcoinTableViewCellModel.init(
-                    name: $0.name ?? "N/A",
-                    symbol: $0.asset_id ?? "",
-                    price: "$1"
+                   let iconUrl = URL(string: ApiCall.shared.icons.filter(
+                    { icon in
+                        icon.asset_id == models.asset_id
+                        
+                    }
+                   ).first?.url ?? ""
+                   )
+                return BitcoinTableViewCellModel.init(
+                    name:models.name ?? "N/A",
+                    symbol: models.asset_id ?? "",
+                    price: priceString ?? "N/A",
+                    iconurl: iconUrl
                    )
                })
-               /* self?.viewModels = models.compactMap(
-                {
-                    /*BitcoinTableViewCellModel(
-                        name : $0.name ?? "N/A",
-                        symbol : $0.asset_id ?? "",
-                         price: $1.price_usd
-                    )*/
-                }) */
+         
+               
                DispatchQueue.main.sync {
                    
                    self?.tableView.reloadData()
