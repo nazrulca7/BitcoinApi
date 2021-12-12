@@ -13,26 +13,26 @@ struct Bitcoin: Codable{
     let name : String?
     let type_is_crypto : Int?
     
-    
-let data_quote_start: String
-let data_quote_end : String
-let data_orderbook_start: String
-let data_orderbook_end  : String
-let data_trade_start  : String
-let data_trade_end : String
+ 
+let data_quote_start: String?
+let data_quote_end : String?
+let data_orderbook_start: String?
+let data_orderbook_end  : String?
+let data_trade_start  : String?
+let data_trade_end : String?
 let data_symbols_count : Int?
 let volume_1hrs_usd: Float?
 let volume_1day_usd: Float?
 let volume_1mth_usd: Float?
-    
+   
     
     
     
     let price_usd : Float?
     let id_icon : String?
     
-let data_start: String
-let data_end : String
+let data_start: String?
+let data_end : String?
     
     
     
@@ -46,6 +46,133 @@ struct Icon:Codable{
     
     
 }
+
+
+class BitcoinTableViewCellModel{
+    
+    let name : String
+    let symbol : String
+    let price : String
+    let iconurl: URL?
+    var iconData : Data?
+    
+    let data_quote_start: String?
+    let data_quote_end : String?
+    let data_orderbook_start: String?
+    let data_orderbook_end  : String?
+    
+    
+    
+    init(
+        name:String,
+    symbol: String,
+    price:String,
+    iconurl : URL?,
+    
+        data_quote_start: String,
+        data_quote_end : String,
+        data_orderbook_start: String,
+        data_orderbook_end  : String
+    )
+    {
+        self.name = name
+        self.symbol = symbol
+        self.price = price
+        self.iconurl = iconurl
+        
+        self.data_quote_start = data_quote_start
+        self.data_quote_end = data_quote_end
+        self.data_orderbook_start = data_orderbook_start
+        self.data_orderbook_end  = data_orderbook_end
+    }
+    
+}
+
+
+
+class BitcoinDtlTableViewCellModel{
+    
+    let asset_id : String?
+    let name : String?
+    let type_is_crypto : Int?
+    
+ 
+let data_quote_start: String?
+let data_quote_end : String?
+let data_orderbook_start: String?
+let data_orderbook_end  : String?
+let data_trade_start  : String?
+let data_trade_end : String?
+let data_symbols_count : Int?
+let volume_1hrs_usd: Float?
+let volume_1day_usd: Float?
+let volume_1mth_usd: Float?
+   
+    
+    
+    
+    let price_usd : Float?
+    let id_icon : String?
+    
+let data_start: String?
+let data_end : String?
+    
+    
+    
+    
+    
+    
+    init(
+    asset_id : String,
+        name : String,
+        type_is_crypto : Int,
+       
+    data_quote_start: String,
+    data_quote_end : String,
+    data_orderbook_start: String,
+    data_orderbook_end  : String,
+    
+    data_trade_start  : String,
+    data_trade_end : String,
+    data_symbols_count : Int,
+    volume_1hrs_usd: Float,
+    volume_1day_usd: Float,
+    volume_1mth_usd: Float,
+   
+        price_usd : Float,
+        id_icon : String,
+       
+    data_start: String,
+    data_end : String
+    )
+    {
+        self.asset_id = asset_id
+        self.name = name
+        self.type_is_crypto = type_is_crypto
+       
+        self.data_quote_start = data_quote_start
+        self.data_quote_end = data_quote_end
+        self.data_orderbook_start = data_orderbook_start
+        self.data_orderbook_end  = data_orderbook_end
+        self.data_trade_start = data_trade_start
+        self.data_trade_end  = data_trade_end
+        self.data_symbols_count = data_symbols_count
+        self.volume_1hrs_usd = volume_1hrs_usd
+        self.volume_1day_usd  = volume_1day_usd
+        self.volume_1mth_usd = volume_1mth_usd
+          
+          
+        self.price_usd = price_usd
+        self.id_icon  = id_icon
+           
+        self.data_start = data_start
+        self.data_end = data_end
+        
+    }
+    
+}
+
+
 
 
 /*"asset_id": "BTC",

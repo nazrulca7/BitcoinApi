@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
     
-
+    var SelectRowId : String = ""
     private let tableView : UITableView = {
     
         let tableView = UITableView(frame : .zero , style:.grouped)
@@ -57,7 +57,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     name:models.name ?? "N/A",
                     symbol: models.asset_id ?? "",
                     price: priceString ?? "N/A",
-                    iconurl: iconUrl
+                    iconurl: iconUrl,
+                    
+                    data_quote_start: models.data_quote_start ?? "",
+                    data_quote_end : models.data_quote_end ?? "",
+                    data_orderbook_start : models.data_orderbook_start ?? "",
+                    data_orderbook_end  : models.data_orderbook_end ?? ""
+                    
                    )
                })
          
@@ -100,6 +106,57 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+         
+       
+        SelectRowId = viewModels[indexPath.row].symbol
+        var isSomethingEnabled = false
+
+        
+        if let viewControllerB = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            viewControllerB.SelectRowId = SelectRowId
+            viewControllerB.bitdata = viewModels
+                    if let navigator = navigationController {
+                        navigator.pushViewController(viewControllerB, animated: true)
+                    }
+                }
+        
+        
+        
+      /* let vc = DetailsViewController(SelectRowId: String( self.SelectRowId), model: self.viewModels)*/
+        
+       // let vc = checkViewController()
+      //  let vc = DetailsViewController()
+        
+       /// vc.SelectRowId = SelectRowId
+        //navigationController?.pushViewController(vc, animated: true)
+        
+  
+        
+        //print(indexPath.row)
+        //print(viewModels[indexPath.row].symbol)
+          
+          
+      }
+ 
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.performSegue(withIdentifier: "dtlsegue", sender: nil)
+        
+            let dtlView = segue.destination as! DetailsViewController
+            dtlView.SelectRowId = SelectRowId
+    }*/
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.performSegue(withIdentifier: "segue", sender: nil)
+        
+            let dtlView = segue.destination as! DetailsViewController
+            dtlView.SelectRowId = SelectRowId
+       
+    }
+   */
+      
+    
+    
     
 }
 

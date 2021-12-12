@@ -7,29 +7,7 @@
 
 import UIKit
 
-class BitcoinTableViewCellModel{
-    
-    let name : String
-    let symbol : String
-    let price : String
-    let iconurl: URL?
-    var iconData : Data?
-    
-    init(
-        name:String,
-    symbol: String,
-    price:String,
-    iconurl : URL?
-    )
-    {
-        self.name = name
-        self.symbol = symbol
-        self.price = price
-        self.iconurl = iconurl
-        
-    }
-    
-}
+
 class BitcoinTableViewCell: UITableViewCell {
 
    static let identifier = "BitcoinTableViewCell"
