@@ -195,6 +195,7 @@ let data_end : String?
 */
 
 /*
+ time series
  "time_period_start": "2016-01-01T00:01:00.0000000Z",
      "time_period_end": "2016-01-01T00:02:00.0000000Z",
      "time_open": "2016-01-01T00:01:01.1500000Z",
