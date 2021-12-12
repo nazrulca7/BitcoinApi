@@ -193,3 +193,17 @@ let data_end : String?
  "data_start": "2010-07-17",
  "data_end": "2021-12-10"
 */
+
+/*
+ "time_period_start": "2016-01-01T00:01:00.0000000Z",
+     "time_period_end": "2016-01-01T00:02:00.0000000Z",
+     "time_open": "2016-01-01T00:01:01.1500000Z",
+     "time_close": "2016-01-01T00:01:01.1500000Z",
+     "price_open": 430.890000000,
+     "price_high": 430.890000000,
+     "price_low": 430.890000000,
+     "price_close": 430.890000000,
+     "volume_traded": 0.080631010,
+     "trades_count": 1
+ 
+ */

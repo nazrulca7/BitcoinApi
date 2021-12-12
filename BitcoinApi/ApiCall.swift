@@ -102,5 +102,48 @@ final class ApiCall{
 
         
     }
+    
+   
+    
+    public func getHistoryData(){
+        
+        guard let historyurl = URL(string: "https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_BTC_USD/history?apikey=1753BAFA-BD62-45FF-9203-38C810FB8F66&period_id=1MIN&time_start=2016-01-01T00:00:00") else
+        {
+            
+            return
+            
+        }
+        
+        let task = URLSession.shared.dataTask(with: historyurl){[weak self] data,_,error in
+        
+            guard let data = data ,  error == nil else{
+            
+            return
+            
+        }
+        do{
+            
+            //decode operation
+            self?.icons = try JSONDecoder().decode([Icon].self, from: data)
+            
+            if let completion = self?.whenreadyBlock{
+                
+                self?.getAllCriptoData(completion: completion)
+                
+            }
+        }
+        catch{
+            
+           print(error)
+        }
+        
+    }
+    task.resume()
+
+        
+    }
+    
+    
+    
 }
 
